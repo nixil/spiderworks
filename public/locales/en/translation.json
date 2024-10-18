@@ -10,16 +10,4 @@
     "welcome": "Welcome to the Home Page, {{user}}!",
     "logout": "Logout"
   }
-}{
-  "login": {
-    "title": "Iniciar sesión",
-    "description": "Ingrese sus credenciales para acceder a su cuenta.",
-    "username": "Nombre de usuario",
-    "password": "Contraseña",
-    "submit": "Iniciar sesión"
-  },
-  "home": {
-    "welcome": "¡Bienvenido a la página de inicio, {{user}}!",
-    "logout": "Cerrar sesión"
-  }
-},
+}
