@@ -12,6 +12,9 @@ All notable changes to this project will be documented in this file.
 - Redux for state management
 - Redux store with authentication slice
 - Login and logout actions in Redux
+- Internationalization (i18n) support using react-i18next
+- Translation files for English and Spanish
+- LanguageSwitcher component for changing the application language
 
 ### Changed
 - Updated Login component to handle form submission and navigation
@@ -19,6 +22,8 @@ All notable changes to this project will be documented in this file.
 - Updated App component to use Redux for authentication state
 - Modified Login component to dispatch login action
 - Updated Home component to display logged-in user and add logout functionality
+- Integrated translations in Login and Home components
+- Updated App component to include LanguageSwitcher
 
 ### Removed
 - Static rendering of Login component in App

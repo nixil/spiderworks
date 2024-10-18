@@ -7,6 +7,7 @@ import {
 import "./App.css";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <Router>
+        <LanguageSwitcher />
         <Routes>
           <Route
             path="/login"

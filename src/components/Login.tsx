@@ -23,6 +23,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../store";
+import { useTranslation } from "react-i18next";
 
 const formSchema = z.object({
   username: z.string().min(1, "Username is required"),
@@ -30,6 +31,7 @@ const formSchema = z.object({
 });
 
 const Login: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const form = useForm<z.infer<typeof formSchema>>({
@@ -50,10 +52,8 @@ const Login: React.FC = () => {
     <Form {...form}>
       <Card className="w-[350px]">
         <CardHeader>
-          <CardTitle className="text-3xl">Welcome</CardTitle>
-          <CardDescription>
-            Enter your credentials to access your account.
-          </CardDescription>
+          <CardTitle className="text-3xl">{t("login.title")}</CardTitle>
+          <CardDescription>{t("login.description")}</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -62,9 +62,9 @@ const Login: React.FC = () => {
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Username</FormLabel>
+                  <FormLabel>{t("login.username")}</FormLabel>
                   <FormControl>
-                    <Input placeholder="username" {...field} />
+                    <Input placeholder={t("login.username")} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -75,9 +75,13 @@ const Login: React.FC = () => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>{t("login.password")}</FormLabel>
                   <FormControl>
-                    <Input type="password" placeholder="password" {...field} />
+                    <Input
+                      type="password"
+                      placeholder={t("login.password")}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -85,14 +89,12 @@ const Login: React.FC = () => {
             />
 
             <Button className="w-full" type="submit">
-              Log in
+              {t("login.submit")}
             </Button>
           </form>
         </CardContent>
         <CardFooter>
-          <p className="text-zinc-200">
-            Copyright © 2018 - 2024 Helianthus Ltd. All rights reserved.
-          </p>
+          <p className="text-zinc-200">{t("login.copyright")}</p>
         </CardFooter>
       </Card>
     </Form>
