@@ -21,14 +21,17 @@ import {
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../store";
 
 const formSchema = z.object({
   username: z.string().min(1, "Username is required"),
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
-const Login: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
+const Login: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -39,7 +42,7 @@ const Login: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
-    onLogin();
+    dispatch(login(values.username));
     navigate("/home");
   };
 

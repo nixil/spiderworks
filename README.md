@@ -1,7 +1,6 @@
 # React + TypeScript + Vite + shadcn UI + React Router
 
 This project is a modern web application starter built with React, TypeScript, Vite, shadcn UI, and React Router.
-
 ## Tech Stack
 
 - **Framework:** React 18
@@ -11,6 +10,7 @@ This project is a modern web application starter built with React, TypeScript, V
 - **UI Components:** shadcn UI (based on Radix UI)
 - **Icons:** Lucide React
 - **Routing:** React Router
+- **State Management:** Redux (with Redux Toolkit)
 - **Form Handling:** React Hook Form
 - **Validation:** Zod
 - **Linting:** ESLint
@@ -25,6 +25,7 @@ This project is a modern web application starter built with React, TypeScript, V
 - Flexible styling with Tailwind CSS
 - Customizable theming using CSS variables
 - Client-side routing with React Router
+- Global state management with Redux
 - Form handling and validation with React Hook Form and Zod
 
 ## Getting Started
