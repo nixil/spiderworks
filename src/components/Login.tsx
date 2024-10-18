@@ -20,76 +20,79 @@ import {
 } from "@/components/ui/form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
-  username: z.string(),
-  password: z.string(),
+  username: z.string().min(1, "Username is required"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
-const Login: React.FC = () => {
+const Login: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
+  const navigate = useNavigate();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
-      password: "",
+      username: "zz",
+      password: "zz",
     },
   });
 
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    console.log(values);
+    onLogin();
+    navigate("/home");
+  };
+
   return (
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>Login</CardTitle>
-        <CardDescription>
-          Enter your credentials to access your account.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Form {...form}>
-          <form className="space-y-8">
+    <Form {...form}>
+      <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle className="text-3xl">Welcome</CardTitle>
+          <CardDescription>
+            Enter your credentials to access your account.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
               control={form.control}
               name="username"
-              render={({ field }) => {
-                return (
-                  <FormItem>
-                    <FormLabel>Username </FormLabel>
-                    <FormControl>
-                      <Input placeholder="username" {...field} />
-                    </FormControl>
-                    {/* <FormDescription> Username or Email </FormDescription> */}
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Username</FormLabel>
+                  <FormControl>
+                    <Input placeholder="username" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-
             <FormField
               control={form.control}
               name="password"
-              render={({ field }) => {
-                return (
-                  <FormItem>
-                    <FormLabel>Password </FormLabel>
-                    <FormControl>
-                      <Input
-                        type="password"
-                        placeholder="password"
-                        {...field}
-                      />
-                    </FormControl>
-                    {/* <FormDescription> Username or Email </FormDescription> */}
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                    <Input type="password" placeholder="password" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
+
+            <Button className="w-full" type="submit">
+              Log in
+            </Button>
           </form>
-        </Form>
-      </CardContent>
-      <CardFooter>
-        <Button className="w-full">Log in</Button>
-      </CardFooter>
-    </Card>
+        </CardContent>
+        <CardFooter>
+          <p className="text-zinc-200">
+            Copyright © 2018 - 2024 Helianthus Ltd. All rights reserved.
+          </p>
+        </CardFooter>
+      </Card>
+    </Form>
   );
 };
 

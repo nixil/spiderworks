@@ -1,6 +1,6 @@
-# React + TypeScript + Vite + shadcn UI
+# React + TypeScript + Vite + shadcn UI + React Router
 
-This project is a modern web application starter built with React, TypeScript, Vite, and shadcn UI.
+This project is a modern web application starter built with React, TypeScript, Vite, shadcn UI, and React Router.
 
 ## Tech Stack
 
@@ -10,6 +10,9 @@ This project is a modern web application starter built with React, TypeScript, V
 - **Styling:** Tailwind CSS
 - **UI Components:** shadcn UI (based on Radix UI)
 - **Icons:** Lucide React
+- **Routing:** React Router
+- **Form Handling:** React Hook Form
+- **Validation:** Zod
 - **Linting:** ESLint
 - **Package Manager:** npm
 
@@ -21,6 +24,8 @@ This project is a modern web application starter built with React, TypeScript, V
 - Fast development and build times with Vite
 - Flexible styling with Tailwind CSS
 - Customizable theming using CSS variables
+- Client-side routing with React Router
+- Form handling and validation with React Hook Form and Zod
 
 ## Getting Started
 
@@ -45,13 +50,23 @@ This project is a modern web application starter built with React, TypeScript, V
 
 - `src/` - Application source code
   - `components/` - UI components
+    - `ui/` - shadcn UI components
+    - `Login.tsx` - Login component
+    - `Home.tsx` - Home component
   - `lib/` - Utility functions
-  - `App.tsx` - Main application component
+  - `App.tsx` - Main application component with routing
   - `main.tsx` - Application entry point
 - `public/` - Static assets
 - `vite.config.ts` - Vite configuration
 - `tailwind.config.js` - Tailwind CSS configuration
 - `tsconfig.json` - TypeScript configuration
+
+## Recent Changes
+
+- Added React Router for client-side routing
+- Implemented a basic authentication flow with Login and Home pages
+- Updated Login component to use React Hook Form and Zod for form handling and validation
+- Added redirection after successful login
 
 ## Customization
 
@@ -67,6 +82,9 @@ To learn more about the technologies used in this project, check out the followi
 - [Tailwind CSS Documentation](https://tailwindcss.com/)
 - [shadcn UI Documentation](https://ui.shadcn.com/)
 - [Radix UI Documentation](https://www.radix-ui.com/)
+- [React Router Documentation](https://reactrouter.com/)
+- [React Hook Form Documentation](https://react-hook-form.com/)
+- [Zod Documentation](https://zod.dev/)
 
 ## License
 
