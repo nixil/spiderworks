@@ -5,8 +5,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import "./App.css";
-import Login from "./components/Login";
-import Home from "./components/Home";
+import Login from "./pages/Login.tsx";
+import Home from "./pages/Home.tsx";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
