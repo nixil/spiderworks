@@ -34,6 +34,27 @@ This project is a modern web application starter built with React, TypeScript, V
 
 ## Getting Started
 
+## Storybook
+
+This project uses Storybook for component development and documentation.
+
+To run Storybook:
+
+```bash
+npm run storybook
+```
+
+This will start Storybook on http://localhost:6006.
+
+To build Storybook as a static web application:
+
+```bash
+npm run build-storybook
+```
+
+This will create a `storybook-static` directory with the built Storybook.
+
+
 1. Clone the repository
 2. Install dependencies:
    ```

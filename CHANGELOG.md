@@ -3,6 +3,15 @@
 ## [Unreleased]
 
 ### Added
+- Integrated Storybook for component development and documentation
+- Created a sample story for the Button component
+- Added Storybook scripts to package.json
+
+### Changed
+- Updated README.md with Storybook usage instructions
+- Updated .gitignore to exclude Storybook build output
+
+### Added
 - Spiderweb image to Login page and Layout component
 - Menubar component in Layout for improved navigation
 - Protected routes using ProtectedRoute component
