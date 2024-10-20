@@ -1,4 +1,5 @@
 import React from "react";
+import spiderwebImage from "../assets/spiderweb.png";
 import { Button } from "@/components/ui/button.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import {
@@ -49,55 +50,64 @@ const Login: React.FC = () => {
   };
 
   return (
-    <Form {...form}>
-      <Card className="w-[350px]">
-        <CardHeader>
-          <CardTitle className="text-3xl">{t("login.title")}</CardTitle>
-          <CardDescription>{t("login.description")}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <FormField
-              control={form.control}
-              name="username"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("login.username")}</FormLabel>
-                  <FormControl>
-                    <Input placeholder={t("login.username")} {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="password"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("login.password")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="password"
-                      placeholder={t("login.password")}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="text-center">
+        <img
+          src={spiderwebImage}
+          alt="Spiderweb"
+          className="fixed top-0 left-0 mx-auto h-24 w-auto"
+        />
+      </div>
+      <Form {...form}>
+        <Card className="w-[350px]">
+          <CardHeader>
+            <CardTitle className="text-3xl">{t("login.title")}</CardTitle>
+            <CardDescription>{t("login.description")}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <FormField
+                control={form.control}
+                name="username"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t("login.username")}</FormLabel>
+                    <FormControl>
+                      <Input placeholder={t("login.username")} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="password"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t("login.password")}</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="password"
+                        placeholder={t("login.password")}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-            <Button className="w-full" type="submit">
-              {t("login.submit")}
-            </Button>
-          </form>
-        </CardContent>
-        <CardFooter>
-          <p className="text-zinc-200">{t("login.copyright")}</p>
-        </CardFooter>
-      </Card>
-    </Form>
+              <Button className="w-full" type="submit">
+                {t("login.submit")}
+              </Button>
+            </form>
+          </CardContent>
+          <CardFooter>
+            <p className="text-zinc-200">{t("login.copyright")}</p>
+          </CardFooter>
+        </Card>
+      </Form>
+    </div>
   );
 };
 

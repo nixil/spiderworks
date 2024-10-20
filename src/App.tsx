@@ -17,22 +17,20 @@ function App() {
   );
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <Router>
-        <LanguageSwitcher />
-        <Routes>
-          <Route
-            path="/login"
-            element={isAuthenticated ? <Navigate to="/home" /> : <Login />}
-          />
-          <Route
-            path="/home"
-            element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
-          />
-          <Route path="/" element={<Navigate to="/login" />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      {/* <LanguageSwitcher /> */}
+      <Routes>
+        <Route
+          path="/login"
+          element={isAuthenticated ? <Navigate to="/home" /> : <Login />}
+        />
+        <Route
+          path="/home"
+          element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
+        />
+        <Route path="/" element={<Navigate to="/login" />} />
+      </Routes>
+    </Router>
   );
 }
 

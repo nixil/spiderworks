@@ -25,7 +25,9 @@ This project is a modern web application starter built with React, TypeScript, V
 - Fast development and build times with Vite
 - Flexible styling with Tailwind CSS
 - Customizable theming using CSS variables
-- Client-side routing with React Router
+- Client-side routing with React Router for seamless navigation
+- Protected routes for authenticated users
+- Automatic redirection to login page for unauthenticated access attempts
 - Global state management with Redux
 - Multi-language support with react-i18next
 - Form handling and validation with React Hook Form and Zod

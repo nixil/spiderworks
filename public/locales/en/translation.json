@@ -1,5 +1,20 @@
 {
+  "app": {
+    "title": "My App",
+    "footer": "© 2024 My App. All rights reserved."
+  },
+  "menu": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "account": "Account",
+    "preferences": "Preferences",
+    "logout": "Logout"
+  },
   "login": {
+    "loading": "Logging in...",
+    "error": "Login failed. Please try again.",
     "title": "Login",
     "description": "Enter your credentials to access your account.",
     "username": "Username",

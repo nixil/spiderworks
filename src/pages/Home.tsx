@@ -1,4 +1,5 @@
 import React from "react";
+import Layout from "../components/Layout";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, logout } from "../store";
 import { useNavigate } from "react-router-dom";
@@ -17,10 +18,14 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold mb-4">{t("home.welcome", { user })}</h1>
-      <Button onClick={handleLogout}>{t("home.logout")}</Button>
-    </div>
+    <Layout>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+        <h1 className="text-4xl font-bold mb-4">
+          {t("home.welcome", { user })}
+        </h1>
+        <Button onClick={handleLogout}>{t("home.logout")}</Button>
+      </div>
+    </Layout>
   );
 };
 

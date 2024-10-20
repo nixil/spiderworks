@@ -1,5 +1,20 @@
 {
+  "app": {
+    "title": "Mi Aplicación",
+    "footer": "© 2024 Mi Aplicación. Todos los derechos reservados."
+  },
+  "menu": {
+    "home": "Inicio",
+    "dashboard": "Panel de control",
+    "profile": "Perfil",
+    "settings": "Configuración",
+    "account": "Cuenta",
+    "preferences": "Preferencias",
+    "logout": "Cerrar sesión"
+  },
   "login": {
+    "loading": "Cargando...",
+    "error": "Error de inicio de sesión. Por favor, inténtelo de nuevo.",
     "title": "Iniciar sesión",
     "description": "Ingrese sus credenciales para acceder a su cuenta.",
     "username": "Nombre de usuario",
